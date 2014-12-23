@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :comments
+
+  resources :tasks
+
+  resources :projects
+
+  resources :users
+
   get 'say/hello'
 
   # The priority is based upon order of creation: first created -> highest priority.
