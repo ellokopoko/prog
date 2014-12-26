@@ -10,10 +10,9 @@
 
 Выбраный проект:
 3. Project-management
-
-    Управление проектами
-    Управление тасками (задачами)
-    Назначение пользователей на задачи, установка дедлайнов и т.д. (примерно как https://basecamp.com/)
+1. Управление проектами
+2. Управление тасками (задачами)
+3. Назначение пользователей на задачи, установка дедлайнов и т.д. (примерно как https://basecamp.com/)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
