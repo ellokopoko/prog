@@ -1,6 +1,6 @@
 == README
 
-Схема базы данных, путь: app/assets/db_2.xls
+Схема базы данных, путь в корне db_.png
 Начальная страница: app/views/say/hello.html.erb
 
 Разработчики:
