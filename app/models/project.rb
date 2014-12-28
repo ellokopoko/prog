@@ -1,3 +1,4 @@
 class Project < ActiveRecord::Base
-  has_many :task
+  has_many  :tasks
+  belong_to :user
 end
