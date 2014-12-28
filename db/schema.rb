@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20141223092337) do
+=======
+ActiveRecord::Schema.define(version: 20141224195520) do
+>>>>>>> b5730778bc5778736634b4dd4e87e4b70d38d917
+=======
 ActiveRecord::Schema.define(version: 20141227213759) do
+>>>>>>> 60f6019d85e472cc2a03dd9187918321c48e9b67
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +59,13 @@ ActiveRecord::Schema.define(version: 20141227213759) do
 
   create_table "users", force: :cascade do |t|
     t.string   "login"
+<<<<<<< HEAD
+    t.string   "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+=======
     t.string   "email"
     t.string   "password"
     t.datetime "created_at",                          null: false
@@ -69,6 +84,10 @@ ActiveRecord::Schema.define(version: 20141227213759) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+<<<<<<< HEAD
+>>>>>>> b5730778bc5778736634b4dd4e87e4b70d38d917
+=======
   add_foreign_key "projects_users", "projects"
   add_foreign_key "projects_users", "users"
+>>>>>>> 60f6019d85e472cc2a03dd9187918321c48e9b67
 end

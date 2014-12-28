@@ -1,4 +1,10 @@
 require 'rails_helper'
+<<<<<<< HEAD
+
+RSpec.describe User, :type => :model do
+  pending "add some examples to (or delete) #{__FILE__}"
+end
+=======
 require_relative './user.rb'
 
 
@@ -36,3 +42,4 @@ require_relative './user.rb'
 		 @user.should_not be_valid 
 	   end
   end
+>>>>>>> b5730778bc5778736634b4dd4e87e4b70d38d917
