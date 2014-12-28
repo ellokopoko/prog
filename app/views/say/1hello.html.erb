@@ -1,0 +1,21 @@
+<% if user_signed_in? %>
+	<span>Здравствуйте,  <%= current_user.email %></span>
+	<%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
+<% else %>
+	<%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
+<% end %>
+ 
+<h1>Project-management</h1>
+<ul>
+	<li>Управление проектами</li>
+	<li>Управление тасками (задачами)</li>
+	<li>Назначение пользователей на задачи, установка дедлайнов и т.д. (примерно как <a href="https://basecamp.com">basecamp.com</a>.)</li>
+</ul>
+<h2>Функциональность проекта</h2>
+<ol>
+<li>Создание проектов</li>
+<li>Назначение исполнителей проектов</li>
+<li>Создание задач проекта</li>
+<li>Установка сроков</li>
+<li>Комментирование проектов и задач</li>
+</ol>
