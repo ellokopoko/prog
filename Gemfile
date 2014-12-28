@@ -38,6 +38,9 @@ gem 'devise'
 # Use Travis for bonus, said Oksana !!!
 gem 'travis', '~> 1.7.4'
 
+# HAML
+gem 'haml', '~> 4.0.6'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

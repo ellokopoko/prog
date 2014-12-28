@@ -1,0 +1,26 @@
+#enter
+  - if user_signed_in?
+    %span Здравствуйте,  = current_user.email
+    = link_to 'Выйти', destroy_user_session_path, :method => :delete 
+  - else
+    = link_to 'Войти', new_user_session_path  
+    или 
+    = link_to 'Зарегистрироваться', new_user_registration_path 
+
+%img{:src => 'assets/images/Teta.png'}
+.about
+  %h1 Project-management
+  %ul
+    %li Управление проектами
+    %li Управление тасками (задачами)
+    %li Назначение пользователей на задачи, установка дедлайнов и т.д. (примерно как <a href="https://basecamp.com">basecamp.com</a>.)
+
+.about
+  %h1 Функциональность проекта
+
+  %ol
+    %li Создание проектов 
+    %li Назначение исполнителей проектов 
+    %li Создание задач проекта 
+    %li Установка сроков 
+    %li Комментирование проектов и задач
