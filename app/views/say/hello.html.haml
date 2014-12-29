@@ -1,21 +1,29 @@
-#enter
+#enter.block
   - if user_signed_in?
-    %span Здравствуйте,  = current_user.email
+    %span Здравствуйте, 
+    %b  
+      = current_user.email
     = link_to 'Выйти', destroy_user_session_path, :method => :delete 
   - else
     = link_to 'Войти', new_user_session_path  
     или 
     = link_to 'Зарегистрироваться', new_user_registration_path 
 
-%img{:src => 'assets/images/Teta.png'}
-.about
+.block
+  %p.bigCenterText Команда
+  #logo
+    %img{src: image_path('teta.png')}
+  %p.bigCenterText представляет проект
+  #ruletool
+    %img{src: image_path('ruletool.png')}
+.block
   %h1 Project-management
   %ul
     %li Управление проектами
     %li Управление тасками (задачами)
     %li Назначение пользователей на задачи, установка дедлайнов и т.д. (примерно как <a href="https://basecamp.com">basecamp.com</a>.)
 
-.about
+.block
   %h1 Функциональность проекта
 
   %ol
