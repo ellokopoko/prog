@@ -10,4 +10,8 @@ describe Task do
   it {should respond_to(:description)}
   it {should respond_to(:date)}
 
+  it "valid db conect" do
+    is_expected.to have_many(:comments)
+  end
+
 end

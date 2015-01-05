@@ -14,4 +14,12 @@ describe Comment do
     @comment.text.length.should be < 1000
   end
 
+  it "valid db conect task" do
+    is_expected.to belong_to(:task)
+  end
+
+  it "valid db conect user" do
+    is_expected.to belong_to(:user)
+  end
+
 end 

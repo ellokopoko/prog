@@ -14,6 +14,10 @@ describe Project do
     @project = FactoryGirl.create(:project)
     @project.name.length.should be > 3
   end
+
+  it "valid db conect" do
+    is_expected.to have_and_belong_to_many(:users)
+  end
   
 end
 
