@@ -1,45 +1,17 @@
 require 'rails_helper'
-<<<<<<< HEAD
 
-RSpec.describe User, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
-=======
-require_relative './user.rb'
-
-
-  describe User do
+describe User do
   
-    it "has a valid factory" do
-       expect(FactoryGirl.build(:user)).to be_valid
-    end
-	
-    #it { is_expected.to have_many(:projects).
-      #with_foreign_key('owner_id') }
-    #end
-	
-	context "validates" do
-	   before(:each) do
-	     @user=Factory.create(:user)
-	   end
-	   
-	   it "is valid with valid attributes" do
-	      @user.should be_valid 
-	   end
-	   
-	   it "is invalid without login" do
-	     @user.login = nil
-		 @user.should_not be_valid 
-	   end
-	   
-	   it "is invalid without email" do
-	     @user.email = nil
-		 @user.should_not be_valid 
-	   end
-	   
-	    it "is invalid without password" do
-	     @user.pass = nil
-		 @user.should_not be_valid 
-	   end
+  it "has a valid factory" do
+     expect(FactoryGirl.build(:user)).to be_valid
   end
->>>>>>> b5730778bc5778736634b4dd4e87e4b70d38d917
+
+  it {should respond_to(:login)}
+  it {should respond_to(:password)}
+
+  it "valid length" do
+    @user = FactoryGirl.create(:user)
+    @user.login.length.should be > 3
+  end
+	
+end

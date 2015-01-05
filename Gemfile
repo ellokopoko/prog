@@ -50,6 +50,8 @@ group :development, :test do
   gem 'webmock'
   gem 'factory_girl_rails'
   gem 'faker'
+  gem 'spork'
+  gem 'capybara'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
