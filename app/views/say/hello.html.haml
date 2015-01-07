@@ -1,14 +1,3 @@
-#enter.block
-  - if user_signed_in?
-    %span Здравствуйте, 
-    %b  
-      = current_user.email
-    = link_to 'Выйти', destroy_user_session_path, :method => :delete 
-  - else
-    = link_to 'Войти', new_user_session_path  
-    или 
-    = link_to 'Зарегистрироваться', new_user_registration_path 
-
 .block
   %p.bigCenterText Команда
   #logo
