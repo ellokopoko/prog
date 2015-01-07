@@ -1,0 +1,10 @@
+%p#notice= notice
+%p
+  %strong Text:
+  = @comment.text
+%p
+  %strong Date:
+  = @comment.date
+= link_to 'Edit', edit_comment_path(@comment)
+|
+\#{link_to 'Back', comments_path}
