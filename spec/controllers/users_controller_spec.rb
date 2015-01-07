@@ -20,15 +20,26 @@ require 'rails_helper'
 
 RSpec.describe UsersController, :type => :controller do
 
+  it "renders show template if an iten is found" do
+    user = FactoryGirl.create(:user)
+    get :show, {id: user.id} 
+    response.should render_template('show')
+  end
+
+  it "renders 404 page if an item is not found" do
+    get :show, {id: 0}
+    response.status.should == 404
+  end
+  
   # This should return the minimal set of attributes required to create a valid
   # User. As you add validations to User, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    skip(:login => "my_login", :password => "password", :email => "login@email.ru")
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    skip(:login => "my", :password => "pas", :email => nil)
   }
 
   # This should return the minimal set of values that should be in the session
