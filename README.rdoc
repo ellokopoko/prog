@@ -1,7 +1,9 @@
 == README
 
-Схема базы данных, путь: app/assets/db_2.xls <br/>
-Начальная страница: app/views/say/hello.html.erb <br/>
+Схема базы данных, путь: app/assets/db_2.xls
+
+Начальная страница: app/views/say/hello.html.erb
+
 Проект на херроку: https://arcane-savannah-9667.herokuapp.com/
 
 Разработчики:
