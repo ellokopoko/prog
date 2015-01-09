@@ -10,6 +10,9 @@ class TasksController < ApplicationController
   # GET /tasks/1
   # GET /tasks/1.json
   def show
+    unless Task.where(id: params[:id]).first
+      render text: "Page not found", status: 404
+    end
   end
 
   # GET /tasks/new
@@ -64,7 +67,7 @@ class TasksController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_task
-      @task = Task.find(params[:id])
+      #@task = Task.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
