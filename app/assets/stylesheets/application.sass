@@ -16,17 +16,35 @@ a
 a hover
 	color: #27A0FF
 
+.menu_small
+	background: #314f67
+	width: 100%
+	position: fixed
+	top: 0
+	height: 44px
+	box-shadow: 2px 12px 10px 2px #c6c6c6
+	display: none
+	z-index: 99
+
+.menu_small ul
+	margin: 0
+
 .header
-	background: #fff
-	border: 1px solid #27A0FF
-	border-radius: 0 0 8px 8px
+	background: #314f67
+	border: 1px solid #467398
+	border-bottom: 0px solid
 	margin: 0px auto
-	padding: 10px
+	padding: 20px 10px
 	margin-top: 0
+	box-shadow: 2px 12px 10px 2px #c6c6c6
+	position: relative
+	width: 100%
+	top: 0
 
 .w840
 	max-width: 840px
 	margin: 0px auto
+	position: relative
 
 .w360
 	max-width: 360px
@@ -34,6 +52,23 @@ a hover
 	height: 30px
 	display: inline-block
 	padding-top: 30px
+
+.menu
+	list-style: none
+	position: absolute
+	bottom: -20
+	right: 0
+	margin: 10 10 0
+
+.menu_gorizontal > li
+	display: inline-block
+	padding: 14px 8px
+
+.menu li:hover
+	background: #c6c6c6
+
+.menu li:hover a
+	color: #5E5E5E
 
 #mini_logo
 	background-image: url("image_path('teta.png')")
@@ -43,9 +78,9 @@ a hover
 	position: absolute
 
 #enter
-	float: right
-	margin-top: 20px
-	margin-right: 20px
+	position: absolute
+	top: 0
+	right: 20px
 	box-sizing: border-box
 	display: inli
 .block
@@ -105,11 +140,10 @@ input[type="submit"]
 	width: 180px
 
 .footer
-	background: #fff
+	background: #314f67
+	border: 1px solid #467398
 	position: static
 	bottom: 0
-	border: 1px solid #27A0FF
-	border-radius: 8px 8px 0 0
 	margin-top: 20px
 	padding: 10px
 

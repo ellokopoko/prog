@@ -41,6 +41,8 @@ gem 'travis', '~> 1.7.4'
 # HAML
 gem 'haml', '~> 4.0.6'
 
+gem 'rails_12factor'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
