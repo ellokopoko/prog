@@ -8,6 +8,10 @@
       %th Date
       %th{:colspan => "3"}
   %tbody
+    - if response.status == 203
+      %tr
+        %td{:colspan => 3} Проектов пока нет
+    - else
     - @projects.each do |project|
       %tr
         %td= project.name
@@ -15,6 +19,6 @@
         %td= project.date
         %td= link_to 'Show', project
         %td= link_to 'Edit', edit_project_path(project)
-        %td= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } 
 %br/
 = link_to 'Create new Project', new_project_path

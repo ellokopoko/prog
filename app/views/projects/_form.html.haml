@@ -1,23 +1,9 @@
-= form_for(@project) do |f|
-  - if @project.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@project.errors.count, "error")
-        prohibited this project from being saved:
-      %ul
-        - @project.errors.full_messages.each do |message|
-          %li= message
-  .field
-    = f.label :name
-    %br/
-    = f.text_field :name
-  .field
-    = f.label :description
-    %br/
-    = f.text_field :description
-  .field
-    = f.label :date
-    %br/
-    = f.date_select :date
-  .actions
-    = f.submit
+= nested_form_for @project do |f|
+  = f.text_field :name
+  = f.fields_for :tasks do |task_form|
+    = task_form.text_field :name
+    = task_form.text_field :description
+    = task_form.text_field :deadline_date
+    = task_form.link_to_remove "Remove this task"
+  = f.link_to_add "Add a task", :tasks
+  = f.submit
