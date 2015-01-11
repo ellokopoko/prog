@@ -39,7 +39,8 @@
             = link_to 'Войти', new_user_session_path  
             или 
             = link_to 'Зарегистрироваться', new_user_registration_path
-    = yield
+    .main_content
+      = yield
     .footer
       .w840
         %img#mini_logo{src: image_path('teta.png')}

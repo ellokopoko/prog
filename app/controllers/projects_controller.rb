@@ -11,7 +11,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1.json
   def show
     unless Project.where(id: params[:id]).first
-      render text: "Page not found", status: 404
+      render "page_404", status: 404
     end
   end
 

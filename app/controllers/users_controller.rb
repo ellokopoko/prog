@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     unless User.where(id: params[:id]).first
-      render text: "Page not found", status: 404
+      render "page_404", status: 404
     end
   end
 
