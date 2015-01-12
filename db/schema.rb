@@ -19,8 +19,6 @@ ActiveRecord::Schema.define(version: 20150111184134) do
   create_table "comments", force: :cascade do |t|
     t.text     "text"
     t.date     "date"
-    t.integer  "task_id"
-    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -54,10 +52,8 @@ ActiveRecord::Schema.define(version: 20150111184134) do
 
   create_table "users", force: :cascade do |t|
     t.string   "login"
-
-    t.string   "password"
-
     t.string   "email"
+    t.string   "password"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -76,5 +72,4 @@ ActiveRecord::Schema.define(version: 20150111184134) do
 
   add_foreign_key "projects_users", "projects"
   add_foreign_key "projects_users", "users"
-
 end
