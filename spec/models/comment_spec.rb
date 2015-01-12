@@ -1,39 +1,25 @@
-#/spec/models/comment_spec.rb 
 require 'rails_helper'
-require_relative './comment.rb'
-
 
 describe Comment do
-    context "validates" do
-	   before(:each) do
-	     @comment=Factory.create(:comment)
-	   end
-	   
-	   it "is valid with valid attributes" do
-	      @comment.should be_valid 
-	   end
-	   
-	   it "is invalid without text" do
-	     @comment.text = nil
-		 @comment.should_not be_valid 
-	   end
-	   
-	   it "is invalid without date" do
-	     @comment.date = nil
-		 @comment.should_not be_valid
-	   end
-	end
+    
+  it "has a valid factory" do
+     expect(FactoryGirl.build(:comment)).to be_valid
+  end
+
+  it {should respond_to(:text)}
+
+  it "valid length" do
+    @comment = FactoryGirl.create(:comment)
+    @comment.text.length.should be > 6
+    @comment.text.length.should be < 1000
+  end
+
+  it "valid db conect task" do
+    is_expected.to belong_to(:task)
+  end
+
+  it "valid db conect user" do
+    is_expected.to belong_to(:user)
+  end
+
 end 
-
-=begin
-RSpec.describe Comment, :type => :model do
-  
-  Class Comment < ActiveRecord::Base
-  validates :text, :presence => true   
-  validates :date, :presence => true
-
-   #belongs_to :task
-   #has_many : participate
-  
-end
-=end	

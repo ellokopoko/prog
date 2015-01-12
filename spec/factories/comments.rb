@@ -1,6 +1,7 @@
 FactoryGirl.define do
+  
   factory :comment do
-    text "some_text"
+    text "My_Text"
     date "2014-12-23"
   end
 

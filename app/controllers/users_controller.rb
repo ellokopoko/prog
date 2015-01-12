@@ -10,6 +10,9 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    unless User.where(id: params[:id]).first
+      render "page_404", status: 404
+    end
   end
 
   # GET /users/new
@@ -71,4 +74,5 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:login, :email, :password)
     end
+
 end

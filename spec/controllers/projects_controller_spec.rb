@@ -20,6 +20,34 @@ require 'rails_helper'
 
 RSpec.describe ProjectsController, :type => :controller do
 
+  it "renders show template if an item is found" do
+    project = FactoryGirl.create(:project)
+    get :show, { id: project.id } 
+    response.should render_template('show')
+  end
+
+  it "renders 404 page if an item is not found" do
+    get :show, { id: 0 }
+    response.status.should == 404
+  end
+
+  it "Status should be 200" do
+    project = FactoryGirl.create(:project)
+    get :index
+    response.status.should == 200
+  end
+
+  it "Status should be 203" do
+    get :index
+    response.status.should == 203
+  end
+
+  it "renders index template if an item is found" do
+    project = FactoryGirl.create(:project)
+    get :index
+    response.should render_template('index')
+  end
+
   # This should return the minimal set of attributes required to create a valid
   # Project. As you add validations to Project, be sure to
   # adjust the attributes here as well.

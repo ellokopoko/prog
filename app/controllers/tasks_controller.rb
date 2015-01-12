@@ -10,6 +10,9 @@ class TasksController < ApplicationController
   # GET /tasks/1
   # GET /tasks/1.json
   def show
+    unless Task.where(id: params[:id]).first
+      render "page_404", status: 404
+    end
   end
 
   # GET /tasks/new

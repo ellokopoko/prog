@@ -20,6 +20,17 @@ require 'rails_helper'
 
 RSpec.describe TasksController, :type => :controller do
 
+  it "renders show template if an iten is found" do
+    task = FactoryGirl.create(:task)
+    get :show, { id: task.id } 
+    response.should render_template('show')
+  end
+
+  it "renders 404 page if an item is not found" do
+    get :show, { id: 0 }
+    response.status.should == 404
+  end
+
   # This should return the minimal set of attributes required to create a valid
   # Task. As you add validations to Task, be sure to
   # adjust the attributes here as well.

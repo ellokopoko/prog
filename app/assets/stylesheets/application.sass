@@ -2,6 +2,7 @@ body
 	background: #ECECEC
 	color: #5E5E5E
 	font: 14px 'Lucida Grande', Arial, sans-serif
+	margin: 1px
 
 h2
 	margin: 0px auto
@@ -15,17 +16,80 @@ a
 a hover
 	color: #27A0FF
 
-#enter
-	width: 500px
-	margin: 0px auto	
-	text-align: center
+.menu_small
+	background: #314f67
+	width: 100%
+	position: fixed
+	top: 0
+	height: 44px
+	box-shadow: 2px 12px 10px 2px #c6c6c6
+	display: none
+	z-index: 99
 
+.menu_small ul
+	margin: 0
+
+.header
+	background: #314f67
+	border: 1px solid #467398
+	border-bottom: 0px solid
+	margin: 0px auto
+	padding: 20px 10px
+	margin-top: 0
+	box-shadow: 2px 12px 10px 2px #c6c6c6
+	position: relative
+	width: 100%
+	top: 0
+	color: #e0e0e0
+
+.w840
+	max-width: 840px
+	margin: 0px auto
+	position: relative
+
+.w360
+	max-width: 360px
+	margin-left: 200px
+	height: 30px
+	display: inline-block
+	padding-top: 30px
+
+.menu
+	list-style: none
+	position: absolute
+	bottom: -20
+	right: 0
+	margin: 10 10 0
+
+.menu_gorizontal > li
+	display: inline-block
+	padding: 14px 8px
+
+.menu li:hover
+	background: #c6c6c6
+
+.menu li:hover a
+	color: #5E5E5E
+
+#mini_logo
+	background-image: url("image_path('teta.png')")
+	margin: 0 auto
+	width: 120px
+	float: left
+	position: absolute
+
+#enter
+	position: absolute
+	top: 0
+	right: 20px
+	box-sizing: border-box
+	display: inli
 .block
 	background: #fff
 	border: 1px solid #27A0FF
 	border-radius: 8px
 	margin: 0px auto
-	width: 500px
+	width: 800px
 	padding: 20px
 	margin-top: 30px
 
@@ -37,7 +101,7 @@ a hover
 	border: 1px solid #27A0FF
 	border-radius: 8px
 	margin: 0px auto
-	width: 500px
+	width: 800px
 	padding: 20px
 	margin-top: 30px
 	text-align: center
@@ -71,6 +135,30 @@ input[type="submit"]
 	background-image: url("image_path('teta.png')")
 	margin: 0 auto
 	width: 360px
+
 #ruletool
 	margin: 0 auto
 	width: 180px
+
+.main_content
+	width: 840px
+	margin: 20px auto
+
+.footer
+	background: #314f67
+	border: 1px solid #467398
+	position: static
+	bottom: 0
+	margin-top: 20px
+	padding: 10px
+	color: #e0e0e0
+	width: 100%
+
+.center_block
+	display: block
+	margin: 0 auto
+	text-align: center
+	font-size: 15px
+	width: 760px
+	height: 40px
+	padding: 20px

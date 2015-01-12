@@ -20,6 +20,17 @@ require 'rails_helper'
 
 RSpec.describe CommentsController, :type => :controller do
 
+  it "renders show template if an iten is found" do
+    comment = FactoryGirl.create(:comment)
+    get :show, { id: comment.id } 
+    response.should render_template('show')
+  end
+
+  it "renders 404 page if an item is not found" do
+    get :show, { id: 0 }
+    response.status.should == 404
+  end
+
   # This should return the minimal set of attributes required to create a valid
   # Comment. As you add validations to Comment, be sure to
   # adjust the attributes here as well.

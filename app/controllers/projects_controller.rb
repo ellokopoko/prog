@@ -5,6 +5,7 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   def index
     @projects = Project.all
+    render "index", status: 203 if @projects.empty?
   end
 
   # GET /projects/1
@@ -24,8 +25,7 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
-    @project = Project.new(project_params)
-
+    @project = current_user.projects.new(project_params)
     respond_to do |format|
       if @project.save
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
@@ -64,11 +64,18 @@ class ProjectsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project
-      @project = Project.find(params[:id])
+      unless Task.where(id: params[:id]).first
+      render "page_404", status: 404
+      else
+        @project = Project.find(params[:id])
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name, :description, :date)
+      params.require(:project).permit(:name, tasks_attributes: task_params)
+    end
+    def task_params
+      [:id, :description, :deadline_date, :_destroy, :assignee_id, :name]
     end
 end

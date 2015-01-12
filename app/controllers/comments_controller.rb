@@ -10,6 +10,9 @@ class CommentsController < ApplicationController
   # GET /comments/1
   # GET /comments/1.json
   def show
+    unless Comment.where(id: params[:id]).first
+      render "page_404", status: 404
+    end
   end
 
   # GET /comments/new
