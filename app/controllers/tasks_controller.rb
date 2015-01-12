@@ -10,9 +10,6 @@ class TasksController < ApplicationController
   # GET /tasks/1
   # GET /tasks/1.json
   def show
-    unless Task.where(id: params[:id]).first
-      render "page_404", status: 404
-    end
   end
 
   # GET /tasks/new
@@ -67,7 +64,11 @@ class TasksController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_task
-      #@task = Task.find(params[:id])
+      unless Task.where(id: params[:id]).first
+        render "page_404", status: 404
+      else
+        @task = Task.find(params[:id])
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

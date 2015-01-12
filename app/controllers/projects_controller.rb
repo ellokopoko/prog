@@ -5,14 +5,12 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   def index
     @projects = Project.all
+    render "index", status: 203 if @projects.empty?
   end
 
   # GET /projects/1
   # GET /projects/1.json
   def show
-    unless Project.where(id: params[:id]).first
-      render "page_404", status: 404
-    end
   end
 
   # GET /projects/new
@@ -67,7 +65,11 @@ class ProjectsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project
-      #@project = Project.find(params[:id])
+      unless Project.where(id: params[:id]).first
+      render "page_404", status: 404
+      else
+        @project = Project.find(params[:id])
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
