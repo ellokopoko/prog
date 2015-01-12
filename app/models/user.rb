@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many                :comments
 
   validates :login, :password, presence: true
+  validates :login, uniqueness: true
   validates :password, length: { in: 6..18 }
   validates :login, length: { minimum: 3 }
 

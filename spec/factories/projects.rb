@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :project do
-    name "MyString"
-    description "MyString"
+    name "My_name"
+    description "some_description"
     date "2014-12-23"
   end
 

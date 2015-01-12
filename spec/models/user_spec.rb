@@ -2,7 +2,15 @@ require 'rails_helper'
 <<<<<<< HEAD
 
 RSpec.describe User, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  
+  it "has a valid factory" do
+    expect(FactoryGirl.build(:user)).to be_valid
+  end
+
+  context "validates" do
+  
+  end
+
 end
 =======
 require_relative './user.rb'
