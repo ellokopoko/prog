@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   root 'say#hello'
   
   get 'persons/profile', as: 'user_root'
-  
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
