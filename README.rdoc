@@ -1,7 +1,10 @@
 == README
 
-Схема базы данных, путь в корне db_.png
-Начальная страница: app/views/say/hello.html.erb
+Схема базы данных, путь: app/assets/db_2.xls
+
+Начальная страница: app/views/say/hello.html.haml
+
+Проект на херроку: https://arcane-savannah-9667.herokuapp.com/
 
 Разработчики:
 1. Талалаев Михаил
@@ -10,9 +13,10 @@
 
 Выбраный проект:
 3. Project-management
-1. Управление проектами
-2. Управление тасками (задачами)
-3. Назначение пользователей на задачи, установка дедлайнов и т.д. (примерно как https://basecamp.com/)
+
+    Управление проектами
+    Управление тасками (задачами)
+    Назначение пользователей на задачи, установка дедлайнов и т.д. (примерно как https://basecamp.com/)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
