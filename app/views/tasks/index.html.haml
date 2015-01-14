@@ -1,14 +1,14 @@
 %p#notice= notice
-%h1 Listing Tasks
-%table
+%h1 Список заданий
+%table.table_S
   %thead
     %tr
-      %th Name
-      %th Description
-      %th Date
-      %th Deadline date
-      %th Status
-      %th{:colspan => "3"}
+      %th Название
+      %th Описание
+      %th Дата создания
+      %th Крайний срок
+      %th Статус
+      %th{:colspan => "3"} Редактировать
   %tbody
     - @tasks.each do |task|
       %tr
@@ -21,4 +21,4 @@
         %td= link_to 'Edit', edit_task_path(task)
         %td= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' }
 %br
-  = link_to 'New Task', new_task_path
+  = link_to 'Создать задачу', new_task_path, class: 'button_S'
