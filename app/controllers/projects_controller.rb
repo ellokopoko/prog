@@ -66,7 +66,7 @@ class ProjectsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_project
       unless Project.where(id: params[:id]).first
-      render "page_404", status: 404
+      render template: "shared/page_404", status: 404
       else
         @project = Project.find(params[:id])
       end

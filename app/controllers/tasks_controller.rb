@@ -65,7 +65,7 @@ class TasksController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_task
       unless Task.where(id: params[:id]).first
-        render "page_404", status: 404
+        render template: "shared/page_404", status: 404
       else
         @task = Task.find(params[:id])
       end

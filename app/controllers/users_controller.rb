@@ -65,7 +65,7 @@ class UsersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       unless User.where(id: params[:id]).first
-        render "page_404", status: 404
+        render template: "shared/page_404", status: 404
       else
         @user = User.find(params[:id])
       end
