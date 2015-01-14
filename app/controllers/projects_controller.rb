@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
-
+  before_action :check_user, only: [:add_user]
   # GET /projects
   # GET /projects.json
   def index
@@ -13,8 +13,16 @@ class ProjectsController < ApplicationController
   def show
     @task = Task.new
     @tasks = @project.tasks
+    
+    @user = User.new
+    @users = @project.users
   end
 
+  # GET /projects/add_user
+  def add_user
+    @project.users.push @user
+  end
+  
   # GET /projects/new
   def new
     @project = Project.new
@@ -68,12 +76,21 @@ class ProjectsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_project
       unless Project.where(id: params[:id]).first
-      render template: "shared/page_404", status: 404
+        render template: "shared/page_404", status: 404
       else
         @project = Project.find(params[:id])
       end
     end
 
+    def check_user
+      unless @user = User.where(email: params[:email]).first
+        @user = User.first
+      end
+      unless @project = Project.find(params[:project_id])
+        @project = Project.first
+      end
+      
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
       #  params.require(:project).permit(:name, tasks_attributes: task_params)

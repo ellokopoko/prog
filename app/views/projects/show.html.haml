@@ -71,6 +71,30 @@
   .actions
     = f.submit
 
+
+%h1 Список пользователей
+%table.table_S
+  %thead
+    %tr
+      %th Логин
+      %th E-mail
+      %th Просмотреть
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.login
+        %td= user.email
+        %td= link_to 'Show', user
+
+
+
+
+= form_tag("/projects/add_user", method: "post") do
+  = hidden_field_tag :project_id, @project.id
+  = label_tag(:email, "Email:")
+  = text_field_tag(:email)
+  = submit_tag("Добавить")
+
 = link_to 'Edit', edit_project_path(@project) 
 |
 = link_to 'Back', projects_path
