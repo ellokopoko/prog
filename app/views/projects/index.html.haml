@@ -1,12 +1,12 @@
 %p#notice= notice
-%h1 Listing Projects
-%table
+%h1 Список проектов
+%table.table_S
   %thead
     %tr
-      %th Name
-      %th Description
-      %th Date
-      %th{:colspan => "3"}
+      %th Название
+      %th Описание
+      %th Дата
+      %th{:colspan => "3"} Редактировать
   %tbody
     - if response.status == 203
       %tr
@@ -21,4 +21,4 @@
         %td= link_to 'Edit', edit_project_path(project)
         %td= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } 
 %br/
-= link_to 'Create new Project', new_project_path
+= link_to '+ Создать проект', new_project_path, class: 'button_S'

@@ -68,7 +68,7 @@ class CommentsController < ApplicationController
       @comment = Comment.find(params[:id])
 =======
       unless Comment.where(id: params[:id]).first
-        render "page_404", status: 404
+        render template: "shared/page_404", status: 404
       else
         @comment = Comment.find(params[:id])
       end

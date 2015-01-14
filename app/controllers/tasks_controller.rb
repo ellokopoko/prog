@@ -68,7 +68,7 @@ class TasksController < ApplicationController
       @task = Task.find(params[:id])
 =======
       unless Task.where(id: params[:id]).first
-        render "page_404", status: 404
+        render template: "shared/page_404", status: 404
       else
         @task = Task.find(params[:id])
       end

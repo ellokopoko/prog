@@ -68,7 +68,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
 =======
       unless User.where(id: params[:id]).first
-        render "page_404", status: 404
+        render template: "shared/page_404", status: 404
       else
         @user = User.find(params[:id])
       end
