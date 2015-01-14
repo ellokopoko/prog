@@ -1,6 +1,8 @@
 class Task < ActiveRecord::Base
   has_many :comments
-
-  validates :name, :description, :date, presence: true
+  belongs_to :project
+  belongs_to :assignee, class_name: User
+  
+  validates :name, :description, presence: true
 
 end

@@ -41,6 +41,8 @@ gem 'travis', '~> 1.7.4'
 # HAML
 gem 'haml', '~> 4.0.6'
 
+#Nested Form
+gem 'nested_form'
 gem 'rails_12factor'
 
 group :development, :test do

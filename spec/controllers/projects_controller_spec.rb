@@ -20,7 +20,7 @@ require 'rails_helper'
 
 RSpec.describe ProjectsController, :type => :controller do
 
-  it "renders show template if an iten is found" do
+  it "renders show template if an item is found" do
     project = FactoryGirl.create(:project)
     get :show, { id: project.id } 
     response.should render_template('show')
