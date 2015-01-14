@@ -64,19 +64,15 @@ class TasksController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_task
-<<<<<<< HEAD
-      @task = Task.find(params[:id])
-=======
       unless Task.where(id: params[:id]).first
         render template: "shared/page_404", status: 404
       else
         @task = Task.find(params[:id])
       end
->>>>>>> 86ab2466045d87fe42346bd234ac9c8b7317538f
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :description, :date, :deadline_date, :status)
+      params.require(:task).permit(:name, :description, :date, :deadline_date, :status, :project_id)
     end
 end

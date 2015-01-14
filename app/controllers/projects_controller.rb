@@ -11,6 +11,8 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @task = Task.new
+    @tasks = @project.tasks
   end
 
   # GET /projects/new
@@ -25,7 +27,8 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
-    @project = current_user.projects.new(project_params)
+    # @project = current_user.projects.new(project_params)
+    @project = Project.new(project_params)
     respond_to do |format|
       if @project.save
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
@@ -73,9 +76,10 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name, tasks_attributes: task_params)
+      #  params.require(:project).permit(:name, tasks_attributes: task_params)
+      params.require(:project).permit(:name, :description, :date)
     end
-    def task_params
-      [:id, :description, :deadline_date, :_destroy, :assignee_id, :name]
-    end
+    # def task_params
+      # [:id, :description, :deadline_date, :_destroy, :assignee_id, :name]
+    # end
 end

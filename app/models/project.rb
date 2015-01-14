@@ -6,6 +6,6 @@ class Project < ActiveRecord::Base
   validates :name, :description, :date, presence: true
   validates :name, length: { minimum: 3 }
 
-  accepts_nested_attributes_for :tasks, allow_destroy: true
+  # accepts_nested_attributes_for :tasks, allow_destroy: true
 
 end

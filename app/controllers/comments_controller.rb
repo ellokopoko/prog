@@ -64,15 +64,11 @@ class CommentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_comment
-<<<<<<< HEAD
-      @comment = Comment.find(params[:id])
-=======
       unless Comment.where(id: params[:id]).first
         render template: "shared/page_404", status: 404
       else
         @comment = Comment.find(params[:id])
       end
->>>>>>> 86ab2466045d87fe42346bd234ac9c8b7317538f
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
