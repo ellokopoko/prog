@@ -37,7 +37,7 @@ RSpec.describe TasksController, :type => :controller do
   end
 
   it "renders new page" do
-    post :create, task: {name: 'comment', description: 'some text'}
+    post :create, task: {name: 'comment', description: 'some text', date: nil}
     response.should render_template('new')
   end
 

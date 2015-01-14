@@ -3,6 +3,6 @@ class Task < ActiveRecord::Base
   belongs_to :project
   belongs_to :assignee, class_name: User
   
-  validates :name, :description, presence: true
+  validates :name, :description, :date, presence: true
 
 end
