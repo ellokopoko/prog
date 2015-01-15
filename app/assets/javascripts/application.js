@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require jquery_nested_form
+jQuery(window).on('scroll', function() {
+	var menu_small = jQuery('.menu_small');
+	if (this.pageYOffset > 100) {
+		menu_small.css({display: 'block'});
+		//if (menu_small.css('display') === 'block') {}	
+	} else {
+		menu_small.css({display: 'none'});	
+	}
+});

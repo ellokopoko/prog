@@ -1,0 +1,4 @@
+test:
+  adapter: postgresql
+  database: prog_test
+  username: postgres

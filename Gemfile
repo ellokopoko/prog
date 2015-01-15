@@ -32,6 +32,19 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Use Devise, said Oksana !!!
+gem 'devise'
+
+# Use Travis for bonus, said Oksana !!!
+gem 'travis', '~> 1.7.4'
+
+# HAML
+gem 'haml', '~> 4.0.6'
+
+#Nested Form
+gem 'nested_form'
+gem 'rails_12factor'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -41,6 +54,8 @@ group :development, :test do
   gem 'webmock'
   gem 'factory_girl_rails'
   gem 'faker'
+  gem 'spork'
+  gem 'capybara'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

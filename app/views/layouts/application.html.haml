@@ -1,0 +1,60 @@
+%html
+  %head
+    %title 
+      Project-management
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .menu_small
+      %ul.menu_gorizontal
+        %li
+          = link_to 'Главная', root_path
+        %li 
+          = link_to 'Проекты', projects_path
+        %li 
+          = link_to 'Пользователи', users_path
+        %li 
+          = link_to 'Задачи', tasks_path
+        %li 
+          = link_to 'Комментарии', comments_path
+    .header
+      .w840
+        %img#mini_logo{src: image_path('teta.png')}
+        .w360
+        %ul.menu.menu_gorizontal
+          %li
+            = link_to 'Главная', root_path
+          %li 
+            = link_to 'Проекты', projects_path
+          %li 
+            = link_to 'Пользователи', users_path
+          %li 
+            = link_to 'Задачи', tasks_path
+          %li 
+            = link_to 'Комментарии', comments_path
+        #enter
+          - if user_signed_in?
+            %span Здравствуйте, 
+            %b  
+              = current_user.email
+            = link_to 'Выйти', destroy_user_session_path, :method => :delete 
+          - else
+            = link_to 'Войти', new_user_session_path  
+            или 
+            = link_to 'Зарегистрироваться', new_user_registration_path
+    .main_content
+      = yield
+    .footer
+      .w840
+        %img#mini_logo{src: image_path('teta.png')}
+        .center_block
+          Разработано командой 
+          %b "Тета".
+          %br
+          Участники: 
+          %b Власов Сергей, Талалаев Михаил и Верхогляд Светлана. 
+          %br
+          Все права защишены 2015.
+
+
