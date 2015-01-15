@@ -20,6 +20,12 @@ require 'rails_helper'
 
 RSpec.describe TasksController, :type => :controller do
 
+  it "Status should be 200" do
+    task = FactoryGirl.create(:task)
+    get :index
+    response.status.should == 200
+  end
+
   it "renders show template if an iten is found" do
     task = FactoryGirl.create(:task)
     get :show, { id: task.id } 
